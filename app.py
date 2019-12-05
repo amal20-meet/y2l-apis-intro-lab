@@ -20,7 +20,8 @@ def movies():
                     "image_url": "https://ksassets.timeincuk.net/wp/uploads/sites/55/2018/02/KXC1W2-920x584.jpg"
                     }
                     """
-    return render_template('movie.html', movie={})
+    parsed_json = json.loads(json_string)
+    return render_template('movie.html', movie=parsed_json)
 
 
 @app.route('/tvshows')
@@ -66,6 +67,14 @@ def tv_shows():
 ############################
 @app.route('/dogs')
 def dog_breeds():
+    #response = requests.get("https://dog.ceo/dog-api/documentation/")
+
+
+
+    #parsed_content = json.loads(response.content)
+    #dogs = parsed_content["message"]
+
+    #print(response.content)
     """
     If you visit https://dog.ceo/api/breeds/list/all 
     a list of all dog breeds is returned. Try this in your browser! (Chrome/firefox)

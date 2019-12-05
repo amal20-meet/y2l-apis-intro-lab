@@ -1,0 +1,10 @@
+import requests 
+
+response = requests.get("https://dog.ceo/dog-api/documentation/
+
+")
+
+parsed_content = json.loads(response.content)
+dogs = parsed_content["message"]
+
+print(response.content)
